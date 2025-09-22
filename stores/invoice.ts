@@ -15,20 +15,20 @@ export const useInvoiceStore = defineStore("invoice", {
   } => ({
     uoms: ["pcs", "kg", "hour"],
     vatOptions: [0, 5, 8, 15, 20],
-    clients: ["General Construct", "Boris Expert", "Sirius Software"],
+    clients: ["", "", ""],
     form: {
       number: String(Date.now()).slice(-8),
       issueDate: new Date().toISOString().slice(0, 10),
       dueDate: new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10),
-      from: { name: "Your Name", company: "Your Company", email: "you@mail.com" },
-      to: { name: "Client", company: "General Construct", email: "client@mail.com" },
+      from: { name: "", company: "", email: "" },
+      to: { name: "", company: "", email: "" },
       bankDetails: "",
       notes: "",
       globalDiscount: 0,
       lines: [
         {
           id: id(),
-          description: "Services of Marketing",
+          description: "",
           quantity: 1,
           uom: "pcs",
           price: 24000,

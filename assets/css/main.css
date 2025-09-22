@@ -4,28 +4,38 @@
   --card: 255 255 255;
 }
 
-body {
-  @apply bg-zinc-50 text-zinc-900;
+@layer base{
+  html{
+    @apply leading-4;
+  }
+
+  body {
+    @apply bg-[#E5E7EB] text-black;
+  }
+}
+
+.invoice-title{
+  @apply font-bold text-xl leading-[30px] mb-4;
 }
 
 .card {
-  @apply bg-white rounded-2xl shadow-lg;
+  @apply bg-white rounded-2xl p-4;
 }
 
 .input {
-  @apply w-full rounded-xl border border-zinc-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900/10;
+  @apply w-full rounded-lg border border-[#E5E7EB] h-[45px] text-sm outline-none px-3;
 }
 
 .label {
-  @apply text-xs font-medium text-zinc-500;
+  @apply block text-sm mb-2 font-medium text-[#111928];
 }
 
-.btn {
-  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-zinc-900 text-white hover:bg-zinc-800 disabled:opacity-50;
+.save-invoice {
+  @apply whitespace-nowrap flex items-center justify-center py-2.5 px-5 h-[41px] bg-[#1A56DB] rounded-lg text-white font-medium disabled:text-white/60;
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center rounded-xl px-3 py-2 text-sm border border-zinc-300 text-zinc-700 hover:bg-zinc-50;
+  @apply rounded-lg border border-[#E5E7EB] h-[45px] text-sm outline-none w-full;
 }
 
 .row {
@@ -34,4 +44,24 @@ body {
 
 .tabular-nums {
   font-variant-numeric: tabular-nums;
+}
+
+.panel {
+  @apply bg-white border rounded-xl p-2 text-sm;
+}
+
+.summary-box {
+  @apply bg-white rounded-xl text-sm tabular-nums;
+}
+
+.muted {
+  @apply text-xs text-[#111928];
+}
+
+.preview-block{
+  @apply col-span-12 min-[850px]:col-span-5 lg:col-span-4 order-2 md:sticky md:top-4 md:h-[calc(100dvh-4rem)] md:overflow-auto
+}
+
+.table-tr > th{
+  @apply px-0.5;
 }

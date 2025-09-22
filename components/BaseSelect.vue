@@ -1,9 +1,15 @@
 <template>
   <label class="block">
-    <span v-if="label" class="label">{{ label }}</span>
-    <select class="input mt-1" :value="modelValue"
+    <span v-if="label" class="label">
+      {{ label }}
+    </span>
+
+    <select class="input" 
+      :value="modelValue"
       @change="$emit('update:modelValue', cast(($event.target as HTMLSelectElement).value))">
-      <option v-for="opt in options" :key="String(opt)" :value="String(opt)">
+      <option 
+        v-for="opt in options" :key="String(opt)" 
+        :value="String(opt)">
         {{ opt }}
       </option>
     </select>
